@@ -1,0 +1,13 @@
+[Unit]
+Description=NetMonitor - Network Monitoring Daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/netmonitor -hosts=8.8.8.8,1.1.1.1 -port=8080 -interval=5s
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
